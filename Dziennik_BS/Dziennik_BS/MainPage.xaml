@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Dziennik_BS.MainPage"
+             Title = "Dziennik"
+             BackgroundColor="LightCyan">
+
+
+    <StackLayout Padding="20">
+
+        <HorizontalStackLayout>
+
+            <Button Text="Dodaj ucznia"
+                    BackgroundColor="DarkBlue"
+                    Padding="25"
+                    Margin="47"
+                    FontSize="20"
+                    Clicked="AddStudentButton_Clicked"/>
+
+            <Button Text="Utwórz klasę"
+                    BackgroundColor="DarkBlue"
+                    Padding="25"
+                    Margin="47"
+                    FontSize="20"
+                    Clicked="CreateClassButton_Clicked"/>
+
+            <Button Text="Wczytaj klasę"
+                    BackgroundColor="DarkBlue"
+                    Padding="25"
+                    Margin="47"
+                    FontSize="20"
+                    Clicked="LoadClassButton_Clicked"/>
+
+            <Button Text="Losuj uczniów"
+                    BackgroundColor="DarkBlue"
+                    Padding="25"
+                    Margin="47"
+                    FontSize="20"
+                    Clicked="PickStudentButton_Clicked"/>
+
+            <Button Text="Edytuj uczniów"
+                    BackgroundColor="DarkBlue"
+                    Padding="25"
+                    Margin="47"
+                    FontSize="20"
+                    Clicked="EditStudentButton_Clicked"/>
+
+        </HorizontalStackLayout>
+
+        <StackLayout x:Name="studentsStackLayout">
+        </StackLayout>
+
+    </StackLayout>
+
+</ContentPage>
