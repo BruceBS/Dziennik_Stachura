@@ -30,13 +30,13 @@
     <AppXManifest Include="C:\Users\User\Desktop\Dziennik_BS\Dziennik_BS\Dziennik_BS\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2024-03-05T23:29:50.822</Modified>
+      <Modified>2024-03-26T17:54:18.125</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\User\Desktop\Dziennik_BS\Dziennik_BS\Dziennik_BS\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2024-03-05T23:13:38.065</Modified>
+      <Modified>2024-03-13T00:33:48.245</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\User\Desktop\Dziennik_BS\Dziennik_BS\Dziennik_BS\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\Dziennik_BS.runtimeconfig.json">
       <PackagePath>Dziennik_BS.runtimeconfig.json</PackagePath>
@@ -44,11 +44,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\User\Desktop\Dziennik_BS\Dziennik_BS\Dziennik_BS\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\Dziennik_BS.dll">
       <PackagePath>Dziennik_BS.dll</PackagePath>
-      <Modified>2024-03-05T23:29:49.742</Modified>
+      <Modified>2024-03-26T17:54:16.190</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\User\Desktop\Dziennik_BS\Dziennik_BS\Dziennik_BS\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>Dziennik_BS.exe</PackagePath>
-      <Modified>2024-03-05T23:29:49.854</Modified>
+      <Modified>2024-03-26T17:54:16.600</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\User\Desktop\Dziennik_BS\Dziennik_BS\Dziennik_BS\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\Dziennik_BS.deps.json">
       <PackagePath>Dziennik_BS.deps.json</PackagePath>

@@ -38,7 +38,7 @@ namespace Dziennik_BS
 
         private async void CreateClassButton_Clicked(object sender, EventArgs e)
         {
-            string fileName = await DisplayPromptAsync("Nazwa pliku", "Podaj nazwę pliku (bez rozszerzenia):", "OK", "Anuluj", placeholder: "Nazwa pliku");
+            string fileName = await DisplayPromptAsync("Nazwa pliku", "Podaj nazwę pliku:", "OK", "Anuluj", placeholder: "Nazwa pliku");
 
             if (string.IsNullOrWhiteSpace(fileName))
             {
@@ -46,7 +46,7 @@ namespace Dziennik_BS
                 return;
             }
 
-            string folderPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "Klasy");
+            string folderPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "Class");
             Directory.CreateDirectory(folderPath);
 
             string filePath = Path.Combine(folderPath, $"{fileName}.txt");
@@ -56,9 +56,6 @@ namespace Dziennik_BS
             try
             {
                 await File.WriteAllLinesAsync(filePath, studentsInfo);
-                students.Clear();
-                studentsStackLayout.Children.Clear();
-                currentId = 1;
 
                 await DisplayAlert("Sukces", $"Lista  została zapisana do pliku: {filePath}", "OK");
             }
@@ -120,17 +117,20 @@ namespace Dziennik_BS
         private async void LoadClassButton_Clicked(object sender, EventArgs e)
         {
             string documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-            string folderPath = Path.Combine(documentsPath, "Klasy");
+            string folderPath = Path.Combine(documentsPath, "Class");
 
             if (!Directory.Exists(folderPath))
             {
-                await DisplayAlert("Błąd", "Folder 'Klasy' nie istnieje.", "OK");
+                await DisplayAlert("Błąd", "Folder 'Class' nie istnieje.", "OK");
                 return;
             }
 
             string[] files = Directory.GetFiles(folderPath);
 
-            string selectedFile = await DisplayActionSheet("Wybierz plik", "Anuluj", null, files.Select(Path.GetFileName).ToArray());
+            string selectedFileNameWithExtension = await DisplayActionSheet("Wybierz plik", "Anuluj", null, files.Select(Path.GetFileNameWithoutExtension).ToArray());
+            string selectedFile = files.First(filePath => Path.GetFileNameWithoutExtension(filePath) == selectedFileNameWithExtension);
+
+
 
             if (string.IsNullOrEmpty(selectedFile) || selectedFile == "Anuluj")
                 return;
@@ -163,6 +163,8 @@ namespace Dziennik_BS
                         await DisplayAlert("Błąd", "Nieprawidłowy format linii.", "OK");
                     }
                 }
+                currentId = students.Count;
+                currentId++;
             }
             catch (Exception ex)
             {
